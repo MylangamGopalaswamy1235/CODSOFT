@@ -1,14 +1,8 @@
 import math
-
-# Initialize the board
 board = [' ' for _ in range(9)]
-
-# Print the board
 def print_board():
     for row in [board[i*3:(i+1)*3] for i in range(3)]:
         print('| ' + ' | '.join(row) + ' |')
-
-# Check if a player has won
 def check_winner(player):
     win_conditions = [
         [0, 1, 2], [3, 4, 5], [6, 7, 8],  # rows
@@ -19,12 +13,8 @@ def check_winner(player):
         if all(board[i] == player for i in condition):
             return True
     return False
-
-# Check for tie
 def is_full():
     return ' ' not in board
-
-# Minimax algorithm
 def minimax(is_maximizing):
     if check_winner('O'):
         return 1
@@ -51,8 +41,6 @@ def minimax(is_maximizing):
                 board[i] = ' '
                 best_score = min(score, best_score)
         return best_score
-
-# AI move
 def ai_move():
     best_score = -math.inf
     move = None
@@ -65,8 +53,6 @@ def ai_move():
                 best_score = score
                 move = i
     board[move] = 'O'
-
-# Human move
 def human_move():
     while True:
         try:
@@ -78,8 +64,6 @@ def human_move():
                 print("Invalid move. Try again.")
         except:
             print("Please enter a number from 1 to 9.")
-
-# Main game loop
 def play_game():
     print("Welcome to Tic-Tac-Toe! You are X, AI is O.")
     print_board()
@@ -103,6 +87,4 @@ def play_game():
         elif is_full():
             print("It's a tie!")
             break
-
-# Start the game
 play_game()
