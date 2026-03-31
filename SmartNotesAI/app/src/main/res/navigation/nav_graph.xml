@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_notes">
+
+    <fragment
+        android:id="@+id/navigation_notes"
+        android:name="com.codsoft.smartnotesai.ui.notes.NotesFragment"
+        android:label="Notes" />
+
+    <fragment
+        android:id="@+id/navigation_map"
+        android:name="com.codsoft.smartnotesai.ui.map.KnowledgeMapFragment"
+        android:label="Knowledge Map" />
+
+    <fragment
+        android:id="@+id/navigation_todo"
+        android:name="com.codsoft.smartnotesai.ui.todo.TodoFragment"
+        android:label="To-Do" />
+
+    <fragment
+        android:id="@+id/navigation_ai"
+        android:name="com.codsoft.smartnotesai.ui.assistant.AiAssistantFragment"
+        android:label="AI Assistant" />
+</navigation>

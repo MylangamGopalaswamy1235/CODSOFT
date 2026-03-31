@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="yellow_accent">#FFC857</color>
+    <color name="yellow_dark">#F4B400</color>
+    <color name="primary_text">#1F2937</color>
+    <color name="secondary_text">#6B7280</color>
+    <color name="surface_soft">#FFFDF7</color>
+    <color name="background_light">#F7F9FC</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+    <color name="bottom_nav_inactive">#94A3B8</color>
+</resources>
