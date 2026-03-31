@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.SmartNotesAI" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/yellow_accent</item>
+        <item name="colorSecondary">@color/yellow_accent</item>
+        <item name="android:colorBackground">@color/background_light</item>
+        <item name="android:windowBackground">@color/background_light</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/background_light</item>
+        <item name="android:navigationBarColor">@color/white</item>
+    </style>
+
+    <style name="Widget.SmartNotesAI.YellowButton" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/yellow_accent</item>
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="shapeAppearance">@style/Shape.SmartNotesAI.Button</item>
+        <item name="android:layout_marginTop">8dp</item>
+    </style>
+
+    <style name="Shape.SmartNotesAI.Button" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">14dp</item>
+    </style>
+</resources>
