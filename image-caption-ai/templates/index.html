@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Image Caption AI</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <h1>Image Caption AI</h1>
+      <p class="subtitle">Upload an image and let AI describe it for you</p>
+    </header>
+
+    <!-- Upload Area -->
+    <div class="upload-section">
+      <div class="drop-zone" id="dropZone">
+        <div class="drop-zone-content">
+          <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <polyline points="16 16 12 12 8 16"></polyline>
+            <line x1="12" y1="12" x2="12" y2="21"></line>
+            <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"></path>
+          </svg>
+          <p class="drop-text">Drag &amp; drop an image here</p>
+          <p class="drop-subtext">or</p>
+          <!-- Only the label triggers file input, not the whole drop zone -->
+          <label for="fileInput" class="btn btn-primary" id="chooseFileBtn">Choose Image</label>
+          <input type="file" id="fileInput" accept="image/png,image/jpeg,image/jpg,image/gif,image/webp" hidden />
+        </div>
+      </div>
+
+      <!-- Webcam capture -->
+      <div class="webcam-row">
+        <button class="btn btn-outline" id="webcamBtn" type="button">Use Webcam</button>
+      </div>
+
+      <p class="file-info" id="fileInfo"></p>
+      <p class="file-limit">Max file size: 20MB &middot; Supports PNG, JPG, GIF, WEBP</p>
+    </div>
+
+    <!-- Webcam Modal -->
+    <div class="modal" id="webcamModal" hidden>
+      <div class="modal-box">
+        <h2>Webcam Capture</h2>
+        <video id="webcamVideo" autoplay playsinline></video>
+        <canvas id="webcamCanvas" hidden></canvas>
+        <div class="modal-actions">
+          <button class="btn btn-primary" id="captureBtn" type="button">Capture</button>
+          <button class="btn btn-outline" id="closeWebcamBtn" type="button">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Preview & Result Section -->
+    <div class="result-section" id="resultSection" hidden>
+
+      <!-- Image preview -->
+      <div class="preview-box">
+        <img id="previewImage" src="" alt="Uploaded image preview" />
+      </div>
+
+      <!-- Loading spinner -->
+      <div class="spinner-wrap" id="spinnerWrap">
+        <div class="spinner"></div>
+        <p id="loadingMsg">Generating caption&hellip;</p>
+      </div>
+
+      <!-- Caption output -->
+      <div class="caption-box" id="captionBox" hidden>
+        <h2>Caption</h2>
+        <p class="caption-text" id="captionText"></p>
+
+        <div class="caption-actions">
+          <button class="btn btn-sm btn-outline" id="copyBtn" type="button">Copy</button>
+          <button class="btn btn-sm btn-outline" id="speakBtn" type="button">Read Aloud</button>
+        </div>
+
+        <!-- Alternative captions -->
+        <div class="alternatives" id="alternativesSection" hidden>
+          <h3>Alternative Captions</h3>
+          <ul id="altList"></ul>
+        </div>
+
+        <button class="btn btn-primary mt" id="resetBtn" type="button">Upload Another Image</button>
+      </div>
+
+      <!-- Error box -->
+      <div class="error-box" id="errorBox" hidden>
+        <p id="errorText"></p>
+        <button class="btn btn-outline mt-sm" id="retryBtn" type="button">Try Again</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
